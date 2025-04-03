@@ -1,10 +1,69 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
 int main() {
+//Xadrez (Nivel Novato)
+int option;
+int i, i1, i2, i3;
+char continuar;
+
+do {
+    printf("### Bem vindo ao Prótotipo de Xadrez ###\n");
+    printf("Você possui três peças disponíveis para mover!\n");
+
+    printf("1. Torre!\n");
+    printf("2. Bispo!\n");
+    printf("3. Rainha!\n");
+    printf("Escolha uma peça: ");
+    scanf("%d", &option);
+
+    switch ( option )
+    {
+    case 1:
+    i = 1;
+        printf("\n Você escolheu a Torre! \n");
+        printf("Escolha quantas casas quer move-lá: ");
+        scanf("%d", &i1);
+    printf("\n Movendo...\n");
+    while (i <= i1)
+    {
+        printf("Direita > ");
+        i++;
+    }
+        break;
+    case 2:
+        printf("\n Você escolheu o Bispo! \n");
+        printf("Escolha quantas casas quer move-lo: ");
+        scanf("%d", &i2);
+        printf("\n Movendo...\n");
+    for (i = 0; i <= i2; i++)
+    {
+        printf(" / Direita-Cima\n");
+    }
+        break;
+    case 3:
+    i = 1;
+        printf("\n Você escolheu a Rainha! \n");
+        printf("Escolha quantas casas quer move-lá: ");
+        scanf("%d", &i3);
+        printf("\n Movendo...\n");
+    do
+    {
+        printf(" < Esquerda  ");
+        i++;
+    } while (i <= i3);
+        break;
+    default:
+        printf("Opção Inválida.");
+        continue;
+    }
+    printf("\nDeseja escolher outra peça?[s/n] ");
+    scanf(" %c", &continuar);
+    
+} while (continuar == 's' || continuar == 'S');
+
+    
+
+
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
@@ -28,5 +87,5 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-    return 0;
+  return 0;
 }
